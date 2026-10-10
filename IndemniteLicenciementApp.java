@@ -8,8 +8,8 @@ public class IndemniteLicenciementApp extends JFrame {
     private final JSpinner yearsSpinner = new JSpinner(new SpinnerNumberModel(0, 0, 60, 1));
     private final JSpinner monthsSpinner = new JSpinner(new SpinnerNumberModel(0, 0, 11, 1));
     private final JComboBox<String> categoryBox = new JComboBox<>(new String[]{"Non-cadre", "Cadre"});
-    private final JCheckBox abusiveCheck = new JCheckBox("Licenciement abusif");
-    private final JCheckBox seriousFaultCheck = new JCheckBox("Faute grave");
+    private final JCheckBox abusiveCheck = new JCheckBox("licenciement abusif");
+    private final JCheckBox seriousFaultCheck = new JCheckBox("faute grave");
     private final JTextArea resultArea = new JTextArea();
     private final DecimalFormat moneyFormat = new DecimalFormat("#,##0.00");
 
@@ -82,7 +82,7 @@ public class IndemniteLicenciementApp extends JFrame {
         panel.add(calculateButton);
         panel.add(Box.createVerticalStrut(10));
 
-        JButton resetButton = new JButton("Reinitialiser");
+        JButton resetButton = new JButton("Reset");
         resetButton.setAlignmentX(Component.CENTER_ALIGNMENT);
         resetButton.addActionListener(e -> resetForm());
         panel.add(resetButton);
@@ -92,7 +92,7 @@ public class IndemniteLicenciementApp extends JFrame {
 
     private JPanel createResultPanel() {
         JPanel panel = new JPanel(new BorderLayout());
-        panel.setBorder(BorderFactory.createTitledBorder("Resultat detaille"));
+        panel.setBorder(BorderFactory.createTitledBorder("Resultat"));
         panel.setBackground(Color.WHITE);
 
         resultArea.setEditable(false);
@@ -117,7 +117,7 @@ public class IndemniteLicenciementApp extends JFrame {
         try {
             String salaryText = salaryField.getText().trim().replace(",", ".");
             if (salaryText.isEmpty()) {
-                showError("Veuillez saisir le salaire mensuel.");
+                showError("entrz votre informations");
                 return;
             }
 
